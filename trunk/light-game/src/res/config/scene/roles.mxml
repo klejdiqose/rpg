@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<roles>
+	<role id="4" name="万里独行" x="459" y="1003" z="0" centerX="100" centerY="148" width="200" height="200">
+		<staticFrames count="8">
+			<url>res/image/role/4/staticFrames.png</url>
+		</staticFrames>
+		<walkFrames count="8">
+			<url>res/image/role/4/walkFrames.png</url>
+		</walkFrames>
+		<downFrames count="3">
+			<url>
+				res/images/role/4/downFrames.png
+			</url>
+		</downFrames>
+		<hitedFrames count="3">
+			<url>
+				res/images/role/4/hitedFrames.png
+			</url>
+		</hitedFrames>
+	</role>
+	
+	<role id="1" name="张三">
+		
+	</role>
+</roles>

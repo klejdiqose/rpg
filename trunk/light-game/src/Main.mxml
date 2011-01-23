@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600" 
+			   initialize="application1_initializeHandler(event)" xmlns:view="light.game.view.*">
+	
+	<fx:Script>
+		<![CDATA[
+			import light.game.core.GameScene;
+			import light.game.core.GameStage;
+			import light.game.view.SceneView;
+			
+			import mx.core.UIComponent;
+			import mx.events.FlexEvent;
+			
+			private var scene:light.game.core.GameScene;
+			
+			protected function application1_initializeHandler(event:FlexEvent):void
+			{
+				var s:light.game.core.GameStage = light.game.core.GameStage.Instance;
+				s.onLoad = function():void{
+					var visual:UIComponent = new UIComponent();
+					visual.addChild(s.gameScene.sceneView);
+					toolbar.x = (s.gameScene.screenWidth-732)*0.5;
+					toolbar.y = s.gameScene.screenHeight-60;
+					statusBar.x = (s.gameScene.screenWidth-470)*0.5;
+					main.addElement(visual);
+				}
+				
+			}
+
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:Group id="main">
+		<view:StatusBarView id="statusBar" depth="2">
+			
+		</view:StatusBarView>
+		<view:ToolbarView id="toolbar" depth="2">
+			
+		</view:ToolbarView>
+	</s:Group>
+</s:WindowedApplication>

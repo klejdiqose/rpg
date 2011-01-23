@@ -1,0 +1,128 @@
+<scene toolbarImageUrl="res/image/plate/toolbar.png" toolbarTitleImageUrl="res/image/plate/toolbar-title.png">
+	<map id="0" width="2400" height="1800" orgX="-900" orgY="450" gridSize="30" cellWidth="400" cellHeight="300" cellCountX="6" cellCountY="6">
+		<qiuckViewUrl>
+			res/image/map/0/quickView.jpg
+		</qiuckViewUrl>
+		<viewUrl>
+			res/image/map/0/
+		</viewUrl>
+	</map>
+	
+	<screen x="0" y="0" width="800" height="560">
+	</screen>
+
+	<hero id="1" name="万里独行" x="1026" y="1289" z="0" roleId="3" factionName="华山派" groupName="雄霸天下">
+	</hero>
+	
+	<sprites>
+		<npc id="1" name="张无忌" x="1126" y="1389" roleId="3" factionName="明教" groupName="" />
+		<npc id="2" name="令狐冲" x="1026" y="1489" roleId="4" factionName="明教" groupName=""/>
+	</sprites>
+	
+	<leftHandMagic magicId="normal" />
+	<rightHandMagic magicId="3" />
+	<magic id="normal" name="普通攻击" titleUrl="res/image/magic/normal.png" frameCount="0" centerX="0" centerY="0">
+	</magic>
+	<magic id="0" name="旋转火焰" titleUrl="res/image/magic/0/0.png" frameCount="10" centerX="235" centerY="321" width="460" height="496">
+		<animation type="one" framesUrl="res/image/magic/0/frames.png">
+		</animation>
+	</magic>
+	<magic id="1" name="降龙十八掌" titleUrl="res/image/magic/1/0.png" frameCount="10" centerX="182" centerY="247" width="358" height="327">
+		<animation type="one" framesUrl="res/image/magic/1/frames.png">
+		</animation>
+	</magic>
+	<magic id="2" name="冰剑雨" titleUrl="res/image/magic/2/0.png" frameCount="10" centerX="102" centerY="226" width="200" height="251">
+		<animation type="one" framesUrl="res/image/magic/2/frames.png">
+		</animation>
+	</magic>
+	<magic id="3" name="毒雾" titleUrl="res/image/magic/3/0.png" frameCount="9" centerX="111" centerY="155" width="220" height="225">
+		<animation type="one" framesUrl="res/image/magic/3/frames.png">
+		</animation>
+	</magic>
+	<magic id="4" name="八卦" titleUrl="res/image/magic/4/0.png" frameCount="10" centerX="88" centerY="76" width="180" height="150">
+		<animation type="one" framesUrl="res/image/magic/4/frames.png">
+		</animation>
+	</magic>
+	<magic id="5" titleUrl="res/image/magic/5/0.png" frameCount="8" centerX="235" centerY="321" width="749" height="161">
+		<animation type="one" framesUrl="res/image/magic/5/frames.png">
+		</animation>
+	</magic>
+	<magic id="6" titleUrl="res/image/magic/6/0.png" frameCount="5" centerX="235" centerY="321" width="140" height="46">
+		<animation type="one" framesUrl="res/image/magic/6/frames.png">
+		</animation>
+	</magic>
+	<magic id="7" titleUrl="res/image/magic/7/0.png" frameCount="6" centerX="70" centerY="65" width="140" height="65">
+		<animation type="one" framesUrl="res/image/magic/7/frames.png">
+		</animation>
+	</magic>
+	<magic id="8" titleUrl="res/image/magic/8/0.png" frameCount="5" centerX="230" centerY="496" width="460" height="496">
+		<animation type="one" framesUrl="res/image/magic/8/frames.png">
+		</animation>
+	</magic>
+	<magic id="9" titleUrl="res/image/magic/9/0.png" frameCount="5" centerX="230" centerY="496" width="460" height="496">
+		<animation type="one" framesUrl="res/image/magic/9/frames.png">
+		</animation>
+	</magic>
+	<magic id="10" name="雷电" titleUrl="res/image/magic/10/0.png" frameCount="9" centerX="115" centerY="270" width="230" height="270">
+		<animation type="one" framesUrl="res/image/magic/10/frames.png">
+		</animation>
+	</magic>
+	<magic id="11" name="净化" titleUrl="res/image/magic/11/0.png" frameCount="10" centerX="120" centerY="285" width="240" height="285">
+		<animation type="one" framesUrl="res/image/magic/11/frames.png">
+		</animation>
+	</magic>
+	<magic id="12" name="沼泽" titleUrl="res/image/magic/12/0.png" frameCount="8" centerX="41" centerY="35" width="81" height="73">
+		<animation type="one" framesUrl="res/image/magic/12/frames.png">
+		</animation>
+	</magic>
+	<magic id="13" titleUrl="res/image/magic/13/0.png" frameCount="3" centerX="46" centerY="23" width="93" height="23">
+		<animation type="one" framesUrl="res/image/magic/13/frames.png">
+		</animation>
+	</magic>
+	<magic id="14" name="冰霜" titleUrl="res/image/magic/14/0.png" frameCount="13" centerX="175" centerY="270" width="350" height="350">
+		<animation type="one" framesUrl="res/image/magic/14/frames.png">
+		</animation>
+	</magic>
+	
+	<roles>
+		<role id="3" bodyHeight="80" centerX="50" centerY="85" width="100" height="100"
+			faceUrl="res\image\face\0.jpg" level="50">
+			<staticFrames count="3" start="0" end="2">
+				<url>res/image/role/3/staticFrames.png</url>
+			</staticFrames>
+			<walkFrames count="6" start="3" end="8">
+				<url>res/image/role/3/walkFrames.png</url>
+			</walkFrames>
+			<hitedFrames count="2" start="9" end="11">
+				<url>
+					res/images/role/3/hitedFrames.png
+				</url>
+			</hitedFrames>
+			<downFrames count="1" start="12" end="12">
+				<url>
+					res/images/role/3/downFrames.png
+				</url>
+			</downFrames>
+		</role>
+		<role id="4" bodyHeight="115" centerX="100" centerY="152" width="200" height="200"
+			faceUrl="res\image\face\0.jpg" level="55">
+			<staticFrames count="8" start="0" end="7">
+				<url>res/image/role/4/staticFrames.png</url>
+			</staticFrames>
+			<walkFrames count="8" start="8" end="15">
+				<url>res/image/role/4/walkFrames.png</url>
+			</walkFrames>
+			<hitedFrames count="3" start="16" end="18">
+				<url>
+					res/images/role/4/hitedFrames.png
+				</url>
+			</hitedFrames>
+			<downFrames count="3" start="19" end="21">
+				<url>
+					res/images/role/4/downFrames.png
+				</url>
+			</downFrames>
+		</role>
+		
+	</roles>
+</scene>

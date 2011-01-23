@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" creationComplete="group1_creationCompleteHandler(event)"
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="400" height="300">
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+	<fx:Script>
+		<![CDATA[
+			import flash.utils.setTimeout;
+			
+			import light.game.core.GameStage;
+			import light.game.core.StatusBar;
+			import light.game.sprite.Hero;
+			
+			import mx.events.FlexEvent;
+			
+			public var statusBar:StatusBar = GameStage.Instance.gameScene.headerBar;
+
+			protected function group1_creationCompleteHandler(event:FlexEvent):void
+			{
+				GameStage.Instance.gameScene.headerBar.bindView(this);
+				waitForHeroInit();
+			}
+			
+			private function waitForHeroInit():void{
+				if(GameStage.Instance.gameScene.hero==null)
+					setTimeout(waitForHeroInit, 100);
+				else{
+					var h:Hero = GameStage.Instance.gameScene.hero;
+					heroFace.source = h.faceUrl;
+					level.text = String(h.level);
+					level.x = 67-(level.text.length*2.5);
+				}
+			}
+
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<mx:Image source="res/image/plate/header-status.png" />
+	<mx:Image id="heroFace" x="53" y="11" />
+	<s:Label id="level" y="49" x="67" text="0" toolTip="等级" color="0xffffff" />
+</s:Group>
