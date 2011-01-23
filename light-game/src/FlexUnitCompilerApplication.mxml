@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 此文件是由 Flash Builder 自动生成的，可用于编译 FlexUnit 类，但不可修改。
+请单击“FlexUnit 结果”视图中的“刷新”图标以重新生成此文件。 -->
+
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					   xmlns:s="library://ns.adobe.com/flex/spark" 
+					   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600">
+	<fx:Script>
+		<![CDATA[
+			import light.game.vo.MagicVO;
+			import light.game.core.GameStage;
+			import light.game.core.LightTimerTest;
+			
+			private var light_game_vo_MagicVO_obj:light.game.vo.MagicVO;
+			
+			
+			private var light_game_core_Stage_obj:light.game.core.GameStage;
+			
+			
+			private var light_game_core_LightTimerTest_obj:light.game.core.LightTimerTest;
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+</s:WindowedApplication>

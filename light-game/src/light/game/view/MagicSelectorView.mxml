@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx">
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+	<fx:Script>
+		<![CDATA[
+			import light.game.core.GameStage;
+			import light.game.vo.MagicVO;
+			
+			import mx.controls.Image;
+			import mx.events.FlexEvent;
+			
+			/**
+			 * 横向排列的魔法数量
+			 */
+			public var xCount:int = 5;
+			public var gridHeight:int;
+
+			
+			private var magics:Vector.<MagicVO>;
+			private var buttonToMagic:Dictionary;
+			public function loadMagicTitle(magics:Vector.<MagicVO>):int{
+				this.magics = magics;
+				buttonToMagic = new Dictionary(true);
+				var index:int = -1;
+				for each(var m:MagicVO in magics){
+					index++;
+					var mm:Image = new Image();
+					mm.source = m.titleUrl;
+					mm.width = 30;
+					mm.height = 30;
+					mm.x = int(index%xCount)*30;
+					mm.y = int(index/xCount)*30;
+					mm.toolTip = m.name;
+					mm.addEventListener(MouseEvent.CLICK, onMagicSelected);
+					buttonToMagic[mm] = m;
+					addElement(mm);
+				}
+				gridHeight = int(index/xCount)*30+30;
+				return gridHeight;
+			}
+
+			private function onMagicSelected(e:Event):void{
+				var m:MagicVO = buttonToMagic[e.currentTarget];
+				GameStage.Instance.gameScene.toolbar.setRightHandMagic(m);
+				visible = false;
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+</s:Group>

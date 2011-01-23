@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+		 xmlns:s="library://ns.adobe.com/flex/spark" creationComplete="group1_initializeHandler(event)"
+		 xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:view="light.game.view.*">
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+	<fx:Script>
+		<![CDATA[
+			import light.game.core.GameStage;
+			import light.game.sprite.face.IToolbarView;
+			import light.game.vo.MagicVO;
+			
+			import mx.events.FlexEvent;
+
+			protected function group1_initializeHandler(event:FlexEvent):void
+			{
+				GameStage.Instance.gameScene.toolbar.bindView(this);
+				magicSelector.y -= magicSelector.loadMagicTitle(GameStage.Instance.gameScene.toolbar.magicTitles);
+			}
+			
+			public function setLeftMagic(magic:MagicVO):void{
+				leftMagic.source = magic.titleUrl;
+			}
+
+			public function setRightMagic(magic:MagicVO):void{
+				rightMagic.source = magic.titleUrl;
+			}
+
+			protected function rightMagic_clickHandler(event:MouseEvent):void
+			{
+				var p:Point = localToGlobal(new Point(mouseX, mouseY));
+				if(rightMagic.hitTestPoint(p.x, p.y)){
+					magicSelector.visible = !magicSelector.visible;
+				}
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		.roleStyle{
+			upSkin:Embed(source="res/image/icon/toolbar/role.png");
+			overSkin:Embed(source="res/image/icon/toolbar/role-hover.png");
+			downSkin:Embed(source="res/image/icon/toolbar/role.png");
+			selectedOverSkin:Embed(source="res/image/icon/toolbar/role.png");
+			selectedDownSkin:Embed(source="res/image/icon/toolbar/role.png");
+			selectedDisabledSkin:Embed(source="res/image/icon/toolbar/role.png");
+		}
+		.magicStyle{
+			upSkin:Embed(source="res/image/icon/toolbar/magic.png");
+			overSkin:Embed(source="res/image/icon/toolbar/magic-hover.png");
+			downSkin:Embed(source="res/image/icon/toolbar/magic.png");
+		}
+		.cityStyle{
+			upSkin:Embed(source="res/image/icon/toolbar/city.png");
+			overSkin:Embed(source="res/image/icon/toolbar/city-hover.png");
+			downSkin:Embed(source="res/image/icon/toolbar/city.png");
+		}
+		.panStyle{
+			upSkin:Embed(source="res/image/icon/toolbar/pan.png");
+			overSkin:Embed(source="res/image/icon/toolbar/pan-hover.png");
+			downSkin:Embed(source="res/image/icon/toolbar/pan.png");
+		}
+		.friendsStyle{
+			upSkin:Embed(source="res/image/icon/toolbar/friends.png");
+			overSkin:Embed(source="res/image/icon/toolbar/friends-hover.png");
+			downSkin:Embed(source="res/image/icon/toolbar/friends.png");
+		}
+		.itemStyle{
+			upSkin:Embed(source="res/image/icon/toolbar/item.png");
+			overSkin:Embed(source="res/image/icon/toolbar/item-hover.png");
+			downSkin:Embed(source="res/image/icon/toolbar/item.png");
+		}
+		.flagStyle{
+			upSkin:Embed(source="res/image/icon/toolbar/flag.png");
+			overSkin:Embed(source="res/image/icon/toolbar/flag-hover.png");
+			downSkin:Embed(source="res/image/icon/toolbar/flag.png");
+		}
+		.taskStyle{
+			upSkin:Embed(source="res/image/icon/toolbar/task.png");
+			overSkin:Embed(source="res/image/icon/toolbar/task-hover.png");
+			downSkin:Embed(source="res/image/icon/toolbar/task.png");
+		}
+		.configStyle{
+			upSkin:Embed(source="res/image/icon/toolbar/config.png");
+			overSkin:Embed(source="res/image/icon/toolbar/config-hover.png");
+			downSkin:Embed(source="res/image/icon/toolbar/config.png");
+		}
+	</fx:Style>
+	<mx:Image source="res/image/plate/toolbar.png" />
+	<mx:Image depth="2" x="393.3" source="res/image/plate/toolbar-title.png" click="rightMagic_clickHandler(event)" />
+	<mx:Button x="481" y="30" styleName="roleStyle" />
+	<mx:Button x="503.4" y="30" styleName="magicStyle" />
+	<mx:Button x="526" y="30" styleName="panStyle" />
+	<mx:Button x="548" y="30" styleName="friendsStyle" />
+	<mx:Button x="570.6" y="30" styleName="cityStyle" />
+	<mx:Button x="593" y="30" styleName="itemStyle" />
+	<mx:Button x="614.5" y="30" styleName="flagStyle" />
+	<mx:Button x="637.7" y="30" styleName="taskStyle" />
+	<mx:Button x="660" y="30" styleName="configStyle" />
+	<mx:Image id="leftMagic" x="401" y="5" height="30" width="30"/>
+	<mx:Image id="rightMagic" x="436" y="5" height="30" width="30"/>
+	
+	<view:MagicSelectorView id="magicSelector" x="436" y="5" visible="false">
+	</view:MagicSelectorView>
+</s:Group>

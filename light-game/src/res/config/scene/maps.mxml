@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<maps>
+	<map id="0" cellWidth="400" cellHeight="300" cellCountX="6" cellCountY="6">
+		<qiuckViewUrl>
+			res/image/map/0/quickView.jpg
+		</qiuckViewUrl>
+		<viewPath>
+			res/image/map/0/surface/
+		</viewPath>
+	</map>
+</maps>

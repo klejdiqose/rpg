@@ -1,0 +1,3 @@
+xFrame=10
+width=200
+height=200
